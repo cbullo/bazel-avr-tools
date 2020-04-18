@@ -23,7 +23,7 @@ def _hex_impl(ctx):
 hex = rule(
     implementation=_hex_impl,
     attrs={
-        "src": attr.label(mandatory=True, allow_files=True, single_file=True),
+        "src": attr.label(mandatory=True, allow_single_file=True),
         "_size": attr.label(
                 allow_single_file=True,
                 executable=True,
@@ -60,7 +60,7 @@ def _eeprom_impl(ctx):
 eeprom = rule(
     implementation=_eeprom_impl,
     attrs={
-        "src": attr.label(mandatory=True, allow_files=True, single_file=True),
+        "src": attr.label(mandatory=True, allow_single_file=True),
         "_objcopy": attr.label(
                 allow_single_file=True,
                 executable=True,
@@ -91,7 +91,7 @@ def _listing_impl(ctx):
 listing = rule(
     implementation=_listing_impl,
     attrs={
-        "src": attr.label(mandatory=True, allow_files=True, single_file=True),
+        "src": attr.label(mandatory=True, allow_single_file=True),
         "_objdump": attr.label(
                 allow_single_file=True,
                 executable=True,
