@@ -25,15 +25,13 @@ hex = rule(
     attrs={
         "src": attr.label(mandatory=True, allow_files=True, single_file=True),
         "_size": attr.label(
-                allow_files=True,
-                single_file=True,
+                allow_single_file=True,
                 executable=True,
                 cfg="host",
                 default=Label("@avr_tools//tools/avr:size")
         ),
         "_objcopy": attr.label(
-                allow_files=True,
-                single_file=True,
+                allow_single_file=True,
                 executable=True,
                 cfg="host",
                 default=Label("@avr_tools//tools/avr:objcopy")
@@ -64,8 +62,7 @@ eeprom = rule(
     attrs={
         "src": attr.label(mandatory=True, allow_files=True, single_file=True),
         "_objcopy": attr.label(
-                allow_files=True,
-                single_file=True,
+                allow_single_file=True,
                 executable=True,
                 cfg="host",
                 default=Label("@avr_tools//tools/avr:objcopy")
@@ -96,8 +93,7 @@ listing = rule(
     attrs={
         "src": attr.label(mandatory=True, allow_files=True, single_file=True),
         "_objdump": attr.label(
-                allow_files=True,
-                single_file=True,
+                allow_single_file=True,
                 executable=True,
                 cfg="host",
                 default=Label("@avr_tools//tools/avr:objdump")
