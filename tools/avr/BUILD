@@ -1,3 +1,5 @@
+load(":cc_config.bzl", "cc_toolchain_config")
+
 package(default_visibility = ['//visibility:public'])
 
 filegroup(
@@ -118,6 +120,8 @@ filegroup(
   ],
 )
 
+cc_toolchain_config(name = "avr8-gnu-toolchain-linux_x86_64_config", cpu = "avr")
+
 cc_toolchain_suite(
   name = 'toolchain',
   toolchains = {
@@ -127,14 +131,13 @@ cc_toolchain_suite(
 
 cc_toolchain(
   name = 'cc-compiler-avr-gcc',
+  toolchain_identifier = 'avr8-gnu-toolchain-linux_x86_64',
+  toolchain_config = ':avr8-gnu-toolchain-linux_x86_64_config',
   all_files = ':avr_gcc_all_files',
   compiler_files = ':avr_gcc_compiler_files',
-  cpu = 'avr',
   dwp_files = ':empty',
-  dynamic_runtime_libs = [':empty'],
   linker_files = ':avr_gcc_linker_files',
   objcopy_files = ':objcopy',
-  static_runtime_libs = [':empty'],
   strip_files = ':strip',
   supports_param_files = 1,
 )
