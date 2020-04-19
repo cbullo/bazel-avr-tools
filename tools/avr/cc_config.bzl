@@ -91,6 +91,7 @@ def _impl(ctx):
     cxx_builtin_include_directories = [
             "/usr/lib/gcc/avr/5.4.0/include",
             "/usr/lib/gcc/avr/5.4.0/include-fixed",
+            "/usr/lib/avr/include/"
         ]
 
     artifact_name_patterns = []
