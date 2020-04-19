@@ -120,6 +120,8 @@ package(default_visibility = ['//visibility:public'])
 #   ],
 # )
 
+filegroup(name = 'empty')
+
 cc_toolchain_config(name = "avr8-gnu-toolchain-linux_x86_64_config", cpu = "avr")
 
 cc_toolchain_suite(
