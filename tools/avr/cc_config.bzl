@@ -89,9 +89,8 @@ def _impl(ctx):
     features = []
 
     cxx_builtin_include_directories = [
-            "external/avr_tools/tools/avr/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/4.9.2/include",
-            "external/avr_tools/tools/avr/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/4.9.2/include-fixed",
-            "external/avr_tools/tools/avr/avr8-gnu-toolchain-linux_x86_64/avr/include",
+            "/usr/lib/gcc/avr/5.4.0/include",
+            "/usr/lib/gcc/avr/5.4.0/include-fixed",
         ]
 
     artifact_name_patterns = []
@@ -101,43 +100,43 @@ def _impl(ctx):
     tool_paths = [
         tool_path(
             name = "ar",
-            path = "avr8-gnu-toolchain-linux_x86_64/bin/avr-ar",
+            path = "/usr/bin/avr-ar",
         ),
         tool_path(
             name = "compat-ld",
-            path = "avr8-gnu-toolchain-linux_x86_64/bin/avr-ld",
+            path = "/usr/bin/avr-ld",
         ),
         tool_path(
             name = "cpp",
-            path = "avr8-gnu-toolchain-linux_x86_64/bin/avr-cpp",
+            path = "/usr/bin/avr-cpp",
         ),
         tool_path(
             name = "gcc",
-            path = "avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc",
+            path = "/usr/bin/avr-gcc",
         ),
         tool_path(
             name = "gcov",
-            path = "avr8-gnu-toolchain-linux_x86_64/bin/avr-gcov",
+            path = "/usr/bin/avr-gcov",
         ),
         tool_path(
             name = "ld",
-            path = "avr8-gnu-toolchain-linux_x86_64/bin/avr-ld",
+            path = "/usr/bin/avr-ld",
         ),
         tool_path(
             name = "nm",
-            path = "avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc-nm",
+            path = "/usr/bin/avr-gcc-nm",
         ),
         tool_path(
             name = "objcopy",
-            path = "avr8-gnu-toolchain-linux_x86_64/bin/avr-objcopy",
+            path = "/usr/bin/avr-objcopy",
         ),
         tool_path(
             name = "objdump",
-            path = "avr8-gnu-toolchain-linux_x86_64/bin/avr-objdump",
+            path = "/usr/bin/avr-objdump",
         ),
         tool_path(
             name = "strip",
-            path = "avr8-gnu-toolchain-linux_x86_64/bin/avr-strip",
+            path = "/usr/bin/avr-strip",
         ),
     ]
 
